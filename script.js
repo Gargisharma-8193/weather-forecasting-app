@@ -32,8 +32,9 @@ async function fetchWeather(city) {
     showLoader();
     const unit = isFahrenheit ? "imperial" : "metric";
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${unit}`
-    );
+       `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
+    )
+
     if (!res.ok) throw new Error("City not found");
     const data = await res.json();
     displayWeather(data);
