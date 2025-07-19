@@ -232,4 +232,15 @@ body.dark .unit-toggle label,
 body.dark .theme-toggle label {
   color: #ccc;
 }
+.flag {
+  width: 28px;
+  height: 20px;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-left: 6px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 
