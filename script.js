@@ -105,14 +105,14 @@ function getLocalTime(offset) {
 }
 
 function showLoader() {
-  loader.classList.remove("hidden");
+  loader.classList.remove("hidden");  
   weatherDisplay.classList.add("hidden");
   errorMsg.classList.add("hidden");
 }
 
 function hideLoader() {
   loader.classList.add("hidden");
-}
+} 
 
 function showError(msg) {
   errorMsg.textContent = msg;
