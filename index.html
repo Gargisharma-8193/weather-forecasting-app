@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Weather Forecast</h1>
+      <div class="toggles">
+        <div class="unit-toggle">
+          <label for="unitSwitch">°C / °F</label>
+          <label class="switch">
+            <input type="checkbox" id="unitSwitch" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="theme-toggle">
+          <label for="themeSwitch">Dark Mode</label>
+          <label class="switch">
+            <input type="checkbox" id="themeSwitch" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <section class="search-section">
+      <input type="text" id="cityInput" placeholder="Enter city..." />
+      <button id="searchBtn">Search</button>
+    </section>
+
+    <section class="weather-display">
+      <div id="currentWeather" class="current-weather"></div>
+      <div class="forecast">
+        <h3>5-Day Forecast</h3>
+        <div id="forecastContainer" class="forecast-container"></div>
+      </div>
+    </section>
+
+    <p id="errorMsg" class="error hidden">City not found. Please try again.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
