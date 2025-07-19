@@ -55,7 +55,7 @@ function displayWeather(data) {
 
   cityCountry.innerHTML = `${name}, ${country} <img class="flag" src="${flagUrl}" alt="Flag of ${country}">`;
   cityCountry.dataset.city = name;
-
+ 
   const weather = data.list[0];
   const icon = weather.weather[0].icon;
   const desc = weather.weather[0].description;
