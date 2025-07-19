@@ -1,4 +1,4 @@
-const apiKey = "9af1ed3d75d5481ff2bf73f1d97bf859"; // Replace with your actual OpenWeatherMap API key
+const apiKey = "9af1ed3d75d5481ff2bf73f1d97bf859"; // Your OpenWeatherMap API key
 
 const searchBtn = document.getElementById("searchBtn");
 const cityInput = document.getElementById("cityInput");
@@ -32,8 +32,8 @@ async function fetchWeather(city) {
     showLoader();
     const unit = isFahrenheit ? "imperial" : "metric";
     const res = await fetch(
-       `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
-    )
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${unit}`
+    );
 
     if (!res.ok) throw new Error("City not found");
     const data = await res.json();
@@ -51,13 +51,13 @@ function displayWeather(data) {
   weatherDisplay.classList.remove("hidden");
 
   const { name, country, timezone } = data.city;
+  const weather = data.list[0]; // Closest current forecast
   const flagUrl = `https://flagsapi.com/${country}/flat/64.png`;
   const cityCountry = document.getElementById("cityCountry");
 
   cityCountry.innerHTML = `${name}, ${country} <img class="flag" src="${flagUrl}" alt="Flag of ${country}">`;
   cityCountry.dataset.city = name;
- 
-  const weather = data.list[0];
+
   const icon = weather.weather[0].icon;
   const desc = weather.weather[0].description;
   const temp = Math.round(weather.main.temp);
